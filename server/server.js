@@ -11,12 +11,15 @@ dotenv.config();
 
 //MiddleWare
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL, 
+  credentials: true
+}));
 
 app.use('/', authRoutes);
 app.use('/', itemRoutes);
 app.use('/getUser',authRoutes, userRoutes);
 
-app.listen(process.env.PORT,'0.0.0.0', ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log(`Server is running at ${process.env.PORT}`);
 });
