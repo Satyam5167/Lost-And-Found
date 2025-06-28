@@ -50,7 +50,7 @@ const Register = () => {
 
     try {
       if (!showOtpField) {
-        const otpRes = await fetch('http://localhost:3002/send-otp', {
+        const otpRes = await fetch(`${import.meta.env.VITE_API_BACKEND}/send-otp`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email }),
@@ -64,7 +64,7 @@ const Register = () => {
         return;
       }
 
-      const verifyRes = await fetch('http://localhost:3002/verify-otp', {
+      const verifyRes = await fetch(`${import.meta.env.VITE_API_BACKEND}/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp }),
@@ -73,7 +73,7 @@ const Register = () => {
       const verifyData = await verifyRes.json();
       if (!verifyRes.ok) throw new Error(verifyData.error || 'Invalid OTP');
 
-      const res = await fetch('http://localhost:3002/register', {
+      const res = await fetch(`${import.meta.env.VITE_API_BACKEND}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, password }),
@@ -172,7 +172,7 @@ const Register = () => {
             <button
               onClick={async () => {
                 try {
-                  const otpRes = await fetch('http://localhost:3002/send-otp', {
+                  const otpRes = await fetch(`${import.meta.env.VITE_API_BACKEND}/send-otp`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: form.email }),

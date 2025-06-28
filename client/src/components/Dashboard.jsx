@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Dashboard = () => {
         return;
       }
 
-      const res = await fetch('http://localhost:3002/items', {
+      const res = await fetch(`${import.meta.env.VITE_API_BACKEND}/items`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
