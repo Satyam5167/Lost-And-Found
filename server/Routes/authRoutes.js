@@ -52,6 +52,15 @@ router.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 8);
     try {
 
+        const createTable = await pool.query(`CREATE TABLE IF NOT EXISTS users (
+                                            id SERIAL PRIMARY KEY,
+                                            name VARCHAR(100),
+                                            email VARCHAR(100) UNIQUE NOT NULL,
+                                            password TEXT NOT NULL,
+                                            phone VARCHAR(15) UNIQUE,
+                                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+                                            `);
+
         // if(user){console.log("User Already Registered!")};
         const existingUser = await pool.query("SELECT * FROM users WHERE email =($1)", [email]);
         if (existingUser.rows.length > 0) {
