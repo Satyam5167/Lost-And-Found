@@ -16,7 +16,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use('/', authRoutes);
+app.use(`/`, authRoutes);
 app.use('/', itemRoutes);
 app.use('/getUser',authRoutes, userRoutes);
 
