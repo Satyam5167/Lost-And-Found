@@ -1,0 +1,35 @@
+// For Authentication
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    phone VARCHAR(15) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+//items Table (lost or found items)
+
+CREATE TABLE items (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    location VARCHAR(100),
+    status VARCHAR(10) CHECK (status IN ('lost', 'found')) NOT NULL,
+    date_reported DATE DEFAULT CURRENT_DATE,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    url TEXT
+);
+
+//claims Table (students claiming found items)
+
+CREATE TABLE claims (
+    id SERIAL PRIMARY KEY,
+    item_id INTEGER REFERENCES items(id) ON DELETE CASCADE,
+    claimant_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    message TEXT,
+    status VARCHAR(20) CHECK (status IN ('pending', 'approved', 'rejected')) DEFAULT 'pending',
+    claimed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

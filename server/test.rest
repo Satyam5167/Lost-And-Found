@@ -1,0 +1,24 @@
+### Getting '/' endpoint
+GET http://localhost:3002/
+
+### Registering a User
+
+POST http://localhost:3002/register
+
+Content-Type: application/json
+
+{
+    "username": "satyamfgdfgdfgdgdf",
+    "password": "satyamxyz"
+}
+
+### Registering a User
+
+POST http://localhost:3002/register
+
+Content-Type: application/json
+
+{
+    "username":"satyam",
+    "password":"satyamxyz"
+}

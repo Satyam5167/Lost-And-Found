@@ -1,0 +1,12 @@
+import pg from 'pg';
+const Pool = pg.Pool;
+
+const pool = new Pool({
+    user: "postgres",
+    password: "satyam",
+    host: "localhost",
+    port: 5432,
+    database: "lostandfound"
+});
+
+export default pool;
