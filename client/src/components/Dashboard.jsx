@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
-import dotenv from 'dotenv';
-dotenv.config();
 
 const Dashboard = () => {
   const navigate = useNavigate();
