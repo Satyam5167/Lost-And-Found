@@ -1,7 +1,7 @@
 import express from  'express';
 import dotenv from 'dotenv';
 import pool from '../db.js';
-import authMiddleware from '../Middleware/xyz.js';
+import authMiddleware from '../Middleware/authMiddleware.js';
 const router = express.Router();
 
 dotenv.config();

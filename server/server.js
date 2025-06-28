@@ -17,6 +17,6 @@ app.use('/', authRoutes);
 app.use('/', itemRoutes);
 app.use('/getUser',authRoutes, userRoutes);
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT,'0.0.0.0', ()=>{
     console.log(`Server is running at ${process.env.PORT}`);
 });
