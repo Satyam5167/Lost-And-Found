@@ -1,0 +1,25 @@
+// For Authentication
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    phone VARCHAR(15) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+//items Table (lost or found items)
+
+CREATE TABLE items (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description VARCHAR(36),
+    location VARCHAR(100),
+    status VARCHAR(10) CHECK (status IN ('lost', 'found')) DEFAULT 'found',
+    date_reported DATE DEFAULT CURRENT_DATE,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    url TEXT
+);
+
