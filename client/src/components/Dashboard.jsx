@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Card from './Card';
 import { ToastContainer, toast,Slide } from "react-toastify";
 
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,7 +21,7 @@ const Dashboard = () => {
         return;
       }
 
-      const res = await fetch('http://localhost:3002/items', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/items`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

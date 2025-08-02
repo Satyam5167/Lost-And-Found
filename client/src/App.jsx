@@ -20,7 +20,7 @@ async function requireAuth() {
   const token = localStorage.getItem('token');
   if (!token) return redirect('/login');
 
-  const res = await fetch('http://localhost:3002/items', {
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/items`, {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ async function fetchCurrentUser() {
   const token = localStorage.getItem('token');
   if (!token) return redirect('/login');
 
-  const res = await fetch('http://localhost:3002/getUser', {
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/getUser`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!res.ok) {

@@ -33,7 +33,7 @@ const Post = () => {
 
       const token = localStorage.getItem("token");
 
-      const response = await fetch("http://localhost:3002/items", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/items`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

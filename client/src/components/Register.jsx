@@ -66,7 +66,7 @@ const Register = () => {
     try {
       if (!showOtpField) {
         // Send OTP
-        const otpRes = await fetch('http://localhost:3002/send-otp', {
+        const otpRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/send-otp`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email }),
@@ -82,7 +82,7 @@ const Register = () => {
       }
 
       // Verify OTP
-      const verifyRes = await fetch('http://localhost:3002/verify-otp', {
+      const verifyRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp }),
@@ -92,7 +92,7 @@ const Register = () => {
       if (!verifyRes.ok) throw new Error(verifyData.error || 'Invalid OTP');
 
       // Register User
-      const res = await fetch('http://localhost:3002/register', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, password }),
@@ -220,7 +220,7 @@ const Register = () => {
               type="button"
               onClick={async () => {
                 try {
-                  const otpRes = await fetch('http://localhost:3002/send-otp', {
+                  const otpRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/send-otp`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: form.email }),

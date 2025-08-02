@@ -16,7 +16,7 @@ const UrPost = () => {
         return;
       }
 
-      const res = await fetch('http://localhost:3002/getUserItem', {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/getUserItem`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 

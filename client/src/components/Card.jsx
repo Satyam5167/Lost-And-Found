@@ -4,6 +4,7 @@ import pic from '../assets/pic.jpg';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const Card = ({ title, location, url, description, id }) => {
   const [submit, setSubmit] = useState(true);
 
@@ -25,7 +26,7 @@ const Card = ({ title, location, url, description, id }) => {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3002/sendClaimMail', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/sendClaimMail`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ const Post = () => {
     const fetchItem = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch(`http://localhost:3002/items/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/items/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -55,7 +55,7 @@ const Post = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await fetch(`http://localhost:3002/items/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/items/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
