@@ -12,7 +12,15 @@ dotenv.config();
 
 //MiddleWare
 app.use(express.json());
-app.use(cors());
+
+//setup cors
+const corsOptions ={
+        origin: process.env.FRONTEND_URL,
+        methods: ["GET", "PUT", "POST", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+}
+
+app.use(cors(corsOptions));
 
 app.use('/', authRoutes);
 app.use('/', itemRoutes);
