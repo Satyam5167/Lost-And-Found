@@ -3,9 +3,7 @@ import MapIcon from '../assets/location.png';
 import pic from '../assets/pic.jpg';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// Set the base API URL
-const API_BASE = 'http://localhost:3002/api';
+import API_BASE from '../apiConfig';
 
 const Card = ({ title, location, url, description, id }) => {
   const [submit, setSubmit] = useState(true);

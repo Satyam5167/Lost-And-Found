@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MyCard from './MyCard';
 import { ToastContainer, toast, Slide } from "react-toastify";
-
-const API_BASE = 'http://localhost:3002/api'; // centralized API base
+import API_BASE from '../apiConfig';
 
 const UrPost = () => {
   const navigate = useNavigate();

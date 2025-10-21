@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast, Slide } from 'react-toastify';
-
-const API_BASE = 'http://localhost:3002/api';
+import API_BASE from '../apiConfig';
 
 const Post = () => {
   const {

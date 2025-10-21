@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import NET from 'vanta/src/vanta.net';
-
-const API_BASE = "http://localhost:3002/api";
+import API_BASE from '../apiConfig';
 
 const Login = () => {
   const navigate = useNavigate();

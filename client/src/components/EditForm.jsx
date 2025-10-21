@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import { useParams } from "react-router-dom";
-
-// Set API base URL
-const API_BASE = "http://localhost:3002/api";
+import API_BASE from '../apiConfig';
 
 const Post = () => {
   const { id } = useParams();

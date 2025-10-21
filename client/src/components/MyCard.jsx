@@ -2,7 +2,7 @@ import React from 'react';
 import pic from '../assets/pic.jpg';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Slide } from 'react-toastify';
-const API_BASE = 'http://localhost:3002/api';
+import API_BASE from '../apiConfig';
 
 const MyCard = ({ id, title, url }) => {
   const navigate = useNavigate();

@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Card from './Card';
 import { ToastContainer, toast, Slide } from "react-toastify";
-
-// Set the base API URL
-const API_BASE = 'http://localhost:3002/api';
+import API_BASE from '../apiConfig';
 
 const Dashboard = () => {
   const navigate = useNavigate();
