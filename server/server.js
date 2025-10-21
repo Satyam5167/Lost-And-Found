@@ -12,9 +12,9 @@ import userMailRoutes from "./routes/userMailRoutes.js";
 dotenv.config();
 
 const allowedOrigins = [
-  'http://localhost:3000', // Your local frontend
-  'http://localhost:5173', // Another local frontend (vite)
-  'https://your-frontend-domain.vercel.app' // YOUR DEPLOYED FRONTEND URL
+  'http://localhost:3000', 
+  'http://localhost:5173', 
+  'https://your-frontend-domain.vercel.app' //EPLOYED FRONTEND URL
 ];
 
 const corsOptions = {
