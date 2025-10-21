@@ -14,7 +14,7 @@ dotenv.config();
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://localhost:5173', 
-  'https://your-frontend-domain.vercel.app' //EPLOYED FRONTEND URL
+  'https://track-it-back.netlify.app' //FRONTEND URL
 ];
 
 const corsOptions = {
