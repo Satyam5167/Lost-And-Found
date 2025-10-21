@@ -1,12 +1,10 @@
+// server/db.js
 import pg from 'pg';
 const Pool = pg.Pool;
 
+// This one line is all you need.
 const pool = new Pool({
-    user: "postgres",
-    password: "satyam",
-    host: "localhost",
-    port: 5432,
-    database: "lostandfound"
+  connectionString: process.env.DATABASE_URL,
 });
 
 export default pool;

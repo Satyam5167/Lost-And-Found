@@ -30,17 +30,17 @@ export const sendClaimMail = async (req, res) => {
     }
 
     const transporter = nodemailer.createTransport({
-      host: process.env.GMAIL_HOST,
+      host: 'smtp-relay.brevo.com',
       port: 587,
-      secure: false,
+      secure: false, // This is correct for port 587
       auth: {
-        user: process.env.MY_EMAIL,
-        pass: process.env.MY_EMAIL_PASS,
+        user: process.env.BREVO_LOGIN,     // The Login Brevo gave you
+        pass: process.env.BREVO_PASSWORD // The Password (API Key) Brevo gave you
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"Trackit Back" <${process.env.MY_EMAIL}>`,
       to: owner_email,
       subject: `Claim Request for "${title}"`,
       html: `
