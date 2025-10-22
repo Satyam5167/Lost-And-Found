@@ -15,7 +15,7 @@ import Greeting from "./components/Greeting"
 import UrPost from './components/UrPost';
 import EditForm from './components/EditForm';
 import Footer from './components/Footer';
-import { API_BASE } from './apiConfig';
+import API_BASE from '/src/apiConfig.js';
 
 async function requireAuth() {
   const token = localStorage.getItem('token');
