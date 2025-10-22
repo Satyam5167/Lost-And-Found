@@ -1,4 +1,5 @@
 // server/db.js
+import dns from 'dns';
 import pg from 'pg';
 const Pool = pg.Pool;
 // Force Node to prefer IPv4 instead of IPv6
