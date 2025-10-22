@@ -4,6 +4,10 @@ const Pool = pg.Pool;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false },
+  family: 'ipv4', 
+  ssl: { 
+    rejectUnauthorized: false
+  },
 });
+
 export default pool;
