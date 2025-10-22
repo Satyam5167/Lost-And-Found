@@ -8,8 +8,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // This is correct for port 587
   auth: {
-    user: process.env.BREVO_LOGIN,     // The Login Brevo gave you
-    pass: process.env.BREVO_PASSWORD // The Password (API Key) Brevo gave you
+    user: process.env.BREVO_LOGIN,     
+    pass: process.env.BREVO_PASSWORD
   },
 });
 
@@ -52,11 +52,10 @@ const sendOtpEmail = async (to, otp) => {
 
   try {
     const info = await transporter.sendMail(mailOptions);
-    console.log('✅ Email sent via SendGrid:', info.response);
+    console.log('Email sent:', info.response);
   } catch (error) {
-    console.error('❌ Error sending OTP email via SendGrid:', error.message);
+    console.error('Error sending OTP email:', error.message);
     
-    // This helps debug SendGrid-specific errors
     if (error.response) {
       console.error(error.response.body);
     }

@@ -34,8 +34,8 @@ export const sendClaimMail = async (req, res) => {
       port: 587,
       secure: false, // This is correct for port 587
       auth: {
-        user: process.env.BREVO_LOGIN,     // The Login Brevo gave you
-        pass: process.env.BREVO_PASSWORD // The Password (API Key) Brevo gave you
+        user: process.env.BREVO_LOGIN,     
+        pass: process.env.BREVO_PASSWORD 
       },
     });
 
