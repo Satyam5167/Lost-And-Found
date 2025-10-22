@@ -14,7 +14,7 @@ dotenv.config();
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://localhost:5173', 
-  'https://track-it-back.netlify.app' //FRONTEND URL
+  'https://track-it-back.netlify.app' //EPLOYED FRONTEND URL
 ];
 
 const corsOptions = {

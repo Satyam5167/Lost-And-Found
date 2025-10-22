@@ -29,15 +29,26 @@ export const sendClaimMail = async (req, res) => {
         .json({ error: "Owner and Claimer cannot be the same" });
     }
 
+    // const transporter = nodemailer.createTransport({
+    //   host: 'smtp-relay.brevo.com',
+    //   port: 587,
+    //   secure: false, // This is correct for port 587
+    //   auth: {
+    //     user: process.env.BREVO_LOGIN,     
+    //     pass: process.env.BREVO_PASSWORD 
+    //   },
+    // });
+
     const transporter = nodemailer.createTransport({
-      host: 'smtp-relay.brevo.com',
+      host: process.env.GMAIL_HOST, 
       port: 587,
-      secure: false, // This is correct for port 587
+      secure: false, // true for 465, false for 587
       auth: {
-        user: process.env.BREVO_LOGIN,     
-        pass: process.env.BREVO_PASSWORD 
+        user: process.env.MY_EMAIL,       
+        pass: process.env.MY_EMAIL_PASS,  
       },
     });
+    
 
     const mailOptions = {
       from: `"Trackit Back" <${process.env.MY_EMAIL}>`,
