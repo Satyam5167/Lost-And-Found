@@ -8,7 +8,7 @@ A lightweight full-stack Lost & Found web app built with
 ## 🧠 Tech Stack
 **Frontend:** React (Vite), Tailwind CSS  
 **Backend:** Node.js, Express.js, PostgreSQL  
-**Other Tools:** Cloudinary, JWT, Nodemailer, dotenv  
+**Other Tools:** Cloudinary, JWT, Nodemailer 
 
 ---
 
@@ -107,14 +107,14 @@ Create a `.env` file inside `/server` (not committed to Git).
 These variables are used throughout the backend:
 
 ```env
-JWT_SECRET=
-DATABASE_URL=
-CLOUD_NAME=
-CLOUD_KEY=
-CLOUD_SECRET=
-GMAIL_HOST=
-MY_EMAIL=
-MY_EMAIL_PASS=
+JWT_SECRET
+DATABASE_URL
+CLOUD_NAME
+CLOUD_KEY
+CLOUD_SECRET
+GMAIL_HOST
+MY_EMAIL
+MY_EMAIL_PASS
 ```
 
 ---
