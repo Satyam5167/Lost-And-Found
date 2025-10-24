@@ -30,7 +30,10 @@ const corsOptions = {
 const app = express();
 
 // Middleware
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: '*'
+}));
+
 app.use(express.json());
 
 // Routes
