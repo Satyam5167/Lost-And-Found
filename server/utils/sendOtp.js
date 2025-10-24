@@ -12,6 +12,7 @@ dotenv.config();
 //     pass: process.env.BREVO_PASSWORD
 //   },
 // });
+
 const transporter = nodemailer.createTransport({
   host: process.env.GMAIL_HOST, 
   port: 587,
