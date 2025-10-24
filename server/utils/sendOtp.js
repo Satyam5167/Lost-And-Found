@@ -12,7 +12,6 @@ dotenv.config();
 //     pass: process.env.BREVO_PASSWORD
 //   },
 // });
-
 const transporter = nodemailer.createTransport({
   host: process.env.GMAIL_HOST, 
   port: 587,
@@ -25,6 +24,7 @@ const transporter = nodemailer.createTransport({
 
 // Function to send OTP via email
 const sendOtpEmail = async (to, otp) => {
+  console.log(to, otp,"xyz");
   const mailOptions = {
     from: `"Track It Back" <${process.env.MY_EMAIL}>`, // MY_EMAIL must be a "Verified Sender" in SendGrid
     to, 
@@ -72,6 +72,7 @@ const sendOtpEmail = async (to, otp) => {
     
     throw new Error('Failed to send OTP email. Please try again.');
   }
+  console.log('Email sent successfully.');
 };
 
 export default sendOtpEmail;
